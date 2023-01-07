@@ -1,0 +1,21 @@
+id, version, product_id, url
+213e51d1-e95d-42f7-99a4-c36420efb842,1,e3a4f04d-78d4-41dd-8386-1ba8ded843d9,http://192.168.1.84:40045/api/v1/download/3916945b-ddfb-49a3-90fd-9194b6a9092d-black_apple_1.jpg
+698891e9-15a0-423e-8c3a-115eae043adb,1,a72ce45c-2c84-4e27-99a5-290ebb2a594e,http://192.168.1.84:40045/api/v1/download/52cc21bc-d65a-4c55-ae6b-a3b49f5f1067-black_pear_1.jpg
+8bda2dc7-048b-4018-a8a9-4e2d7215fac1,1,dd240a29-1bb6-4fbd-a391-38a99a035879,http://192.168.1.84:40045/api/v1/download/8162b23b-0098-49d8-a3a4-bfd8bee0ca0c-black_plum_1.jpg
+5ca4c2ca-b587-4dec-81cb-0c371316cfae,1,9d742227-c6fe-4c39-8a1e-0c0055e27c32,http://192.168.1.84:40045/api/v1/download/22f679bc-449c-4f8e-a161-393a134c977c-green_maple_1.jpg
+4ef3f614-7d0b-4185-aae7-08d384540937,1,d48b1d63-b158-4204-9046-5fa731296393,http://192.168.1.84:40045/api/v1/download/2701467b-5b98-4dad-ae13-e662a43ec056-green_1.jpg
+7eb803ac-09eb-4a41-b934-3c6d69101581,1,a242b9ef-1729-4298-8a46-7f54eafdba96,http://192.168.1.84:40045/api/v1/download/1013998f-bfa0-4865-9bf6-c1aa30fc8ac7-black_1.jpg
+0eacf704-eb3c-4897-a242-9f716dd99b55,1,b650ae37-3b81-4420-9e2d-8703dbe1d2ca,http://192.168.1.84:40045/api/v1/download/9ed999f6-abb2-4df5-8193-ae2071f848af-milk_oolong_1.jpg
+4165d842-ca3c-4119-821e-35084c1fe5d4,1,c4f15ae9-50fe-407c-923f-f81bd6cc1410,http://192.168.1.84:40045/api/v1/download/d7437aa0-3096-44f3-905b-4f842d854453-shu_puerh_1_1.jpg
+c518fda5-c24b-4bab-9f1b-75ded5b8dbc0,1,4c2b1da2-35ce-4948-b49a-bf1dec7fbed3,http://192.168.1.84:40045/api/v1/download/fd087667-75e2-4232-ab95-df73a529a255-shu_puerh_2_1.jpg
+7c2f30c5-36bf-40fc-b893-840a3a05659c,1,c1d06f01-c6b7-4baa-8f26-661f479f712c,http://192.168.1.84:40045/api/v1/download/173bb0f9-b67f-427d-89d0-0a7285bcff51-shu_puerh_3_1.jpg
+eb9b5f35-8631-48de-bbc8-71477588a853,1,e3a4f04d-78d4-41dd-8386-1ba8ded843d9,http://192.168.1.84:40045/api/v1/download/baabb291-2bef-4ddb-bffd-61b4fec73082-black_apple_2.jpg
+d3e57a70-fff2-485d-93bd-481d8087abba,1,a72ce45c-2c84-4e27-99a5-290ebb2a594e,http://192.168.1.84:40045/api/v1/download/52847b71-3676-4807-bd61-eadb25a64881-black_pear_2.jpg
+4816b48c-97a3-4574-97dc-55a47a907fc5,1,dd240a29-1bb6-4fbd-a391-38a99a035879,http://192.168.1.84:40045/api/v1/download/f59d721d-a583-452e-9bf6-b4f8d1c502c7-black_plum_2.jpg
+72ae4f67-0f6c-4b93-b59d-c9ad2c2f0651,1,9d742227-c6fe-4c39-8a1e-0c0055e27c32,http://192.168.1.84:40045/api/v1/download/ff79b776-1e6c-4a27-867a-2ca024b54e01-green_maple_2.jpg
+9944e8be-8365-4c29-925c-9a6ac24053c8,1,d48b1d63-b158-4204-9046-5fa731296393,http://192.168.1.84:40045/api/v1/download/d52cfe29-ba09-42ff-bd82-40b63a175238-green_2.jpg
+1ce24be2-3b7c-4c55-8949-e73325f6a21d,1,a242b9ef-1729-4298-8a46-7f54eafdba96,http://192.168.1.84:40045/api/v1/download/64e2db19-72aa-4ff3-8579-19145850fe3e-black_2.jpg
+58411a57-5680-40dd-8083-8bfd1d62409c,1,b650ae37-3b81-4420-9e2d-8703dbe1d2ca,http://192.168.1.84:40045/api/v1/download/027c7a39-9275-47e9-b3ab-3435c61fc9ce-milk_oolong_2.jpg
+6a6f4919-221c-4788-8563-7828fe49ea0a,1,c4f15ae9-50fe-407c-923f-f81bd6cc1410,http://192.168.1.84:40045/api/v1/download/ea9b2c35-f241-4a45-a73f-dc945ca40ed2-shu_puerh_1_2.jpg
+57c0551f-411f-4267-9744-1e4a96c722e5,1,4c2b1da2-35ce-4948-b49a-bf1dec7fbed3,http://192.168.1.84:40045/api/v1/download/bcfb02c9-5209-4095-aaab-8cd3b0cdf081-shu_puerh_2_2.jpg
+b0aaf396-6e16-45b6-8971-aa89cfdfa05f,1,c1d06f01-c6b7-4baa-8f26-661f479f712c,http://192.168.1.84:40045/api/v1/download/8fcfa849-6b3d-429f-aca5-1bb6721d8edc-shu_puerh_3_2.jpg

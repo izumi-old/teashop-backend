@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="JStore">
+        <preConditions onFail="MARK_RAN">
+            <not><tableExists tableName="IMAGE"/></not>
+        </preConditions>
+
+        <createTable tableName="IMAGE">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_IMAGE"/>
+            </column>
+            <column name="PRODUCT_ID" type="UUID"/>
+            <column name="URL" type="VARCHAR(511)"/>
+
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="JStore">
+        <preConditions onFail="MARK_RAN">
+            <not><indexExists indexName="IDX_IMAGE_PRODUCT"/></not>
+        </preConditions>
+
+        <createIndex indexName="IDX_IMAGE_PRODUCT" tableName="IMAGE">
+            <column name="PRODUCT_ID"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="3" author="JStore">
+        <preConditions onFail="MARK_RAN">
+            <not><foreignKeyConstraintExists foreignKeyName="FK_IMAGE_ON_PRODUCT"/></not>
+        </preConditions>
+
+        <addForeignKeyConstraint baseColumnNames="PRODUCT_ID" baseTableName="IMAGE" constraintName="FK_IMAGE_ON_PRODUCT"
+                                 referencedColumnNames="ID" referencedTableName="PRODUCT"/>
+    </changeSet>
+
+</databaseChangeLog>

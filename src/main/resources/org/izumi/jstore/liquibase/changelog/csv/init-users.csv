@@ -1,0 +1,3 @@
+id, version, username, password, active
+60885987-1b61-4247-94c7-dff348347f93,1,admin,{noop}admin,true
+32885987-1b61-4247-94c7-dff348347f93,1,anonym,{noop}anonym,true
