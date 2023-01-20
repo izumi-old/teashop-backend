@@ -3,4 +3,8 @@
         <property name="categories" fetchPlan="_base"/>
         <property name="images" fetchPlan="_base"/>
     </fetchPlan>
+
+    <fetchPlan name="test" class="org.izumi.jstore.entity.User" extends="_base">
+        <property name="roles" fetchPlan="_base"/>
+    </fetchPlan>
 </fetchPlans>
