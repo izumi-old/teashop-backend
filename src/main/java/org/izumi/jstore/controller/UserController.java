@@ -3,7 +3,10 @@ package org.izumi.jstore.controller;
 import java.util.UUID;
 
 import io.jmix.core.DataManager;
+import io.jmix.core.EntitySerialization;
 import io.jmix.core.EntitySet;
+import io.jmix.core.SaveContext;
+import io.jmix.data.PersistenceHints;
 import io.jmix.rest.security.role.RestMinimalRole;
 import io.jmix.securitydata.entity.RoleAssignmentEntity;
 import lombok.RequiredArgsConstructor;
@@ -11,9 +14,11 @@ import org.izumi.jstore.dto.UserDto;
 import org.izumi.jstore.entity.User;
 import org.izumi.jstore.security.AnonymousRestAccessRole;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController extends AbstractController {
     private final DataManager dataManager;
+    private final EntitySerialization entitySerialization;
 
     @PostMapping("/login")
     public ResponseEntity<User> authorize(@RequestBody UserDto user) {
@@ -40,6 +46,26 @@ public class UserController extends AbstractController {
                 user, assignmentOf(user, AnonymousRestAccessRole.CODE), assignmentOf(user, RestMinimalRole.CODE)
         );
         return ofWithoutHeaders(saved.get(user));
+    }
+
+    @GetMapping
+    public ResponseEntity<String> getAll() {
+        return ofWithoutHeaders(entitySerialization.toJson(dataManager.load(User.class).all().list()));
+    }
+
+    @GetMapping(value = "/delete", params = {"username"})
+    public ResponseEntity<String> delete(@RequestParam String username) {
+        final User user = dataManager.load(User.class)
+                .query("SELECT u FROM User u WHERE u.username = :username")
+                .parameter("username", username)
+                .one();
+
+        final SaveContext context = new SaveContext()
+                .removing(user);
+        context.setHint(PersistenceHints.SOFT_DELETION, false);
+        dataManager.save(context);
+
+        return ofWithoutHeaders("Ok");
     }
 
     private RoleAssignmentEntity assignmentOf(User user, String roleCode) {

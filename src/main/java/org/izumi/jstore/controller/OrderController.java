@@ -39,6 +39,15 @@ public class OrderController extends AbstractController {
     private final EntitySerialization entitySerialization;
     private final FetchPlans fetchPlans;
 
+    @GetMapping
+    public ResponseEntity<String> getAll() {
+        final FetchPlan fetchPlan = fetchPlan();
+        return ofWithoutHeaders(entitySerialization.toJson(
+                dataManager.load(Order.class).all().fetchPlan(fetchPlan).list(),
+                fetchPlan)
+        );
+    }
+
     @GetMapping(params = {"username"})
     public ResponseEntity<String> getAll(@RequestParam String username) {
         final FetchPlan fetchPlan = fetchPlan();
@@ -62,6 +71,7 @@ public class OrderController extends AbstractController {
                 .add("items", b -> b.addFetchPlan(FetchPlan.BASE)
                         .add("product", b1 -> b1.addFetchPlan(FetchPlan.BASE)
                                 .add("images", FetchPlan.BASE)))
+                .add("user", FetchPlan.BASE)
                 .build();
     }
 
