@@ -1,3 +1,4 @@
-id, version, username, role_code, role_type
+id,version,username,role_code,role_type
 6c9e420a-2b7a-4c42-8654-a9027ee14083,1,admin,system-full-access,resource
-8f9e420a-2b7a-4c42-8654-a9027ee14083,1,anonym,anonymous-rest-access,resource
+2ec59b81-679e-4717-8d6b-dddce174596c,1,emerald,rest-minimal,resource
+cebf4040-d0d5-482c-9701-dde9e2a4673a,1,emerald,anonymous-rest-access,resource

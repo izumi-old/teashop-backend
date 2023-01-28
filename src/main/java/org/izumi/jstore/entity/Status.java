@@ -6,7 +6,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public enum Status implements EnumClass<Integer> {
-    GOING(10), FOR_DELIVERY(20), FOR_RECEIPT(30), RECEIVED(40);;
+    GOING(10), FOR_DELIVERY(20), FOR_RECEIPT(30), RECEIVED(40);
 
     private final Integer id;
 

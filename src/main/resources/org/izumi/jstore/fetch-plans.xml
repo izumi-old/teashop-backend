@@ -1,10 +1,5 @@
 <fetchPlans xmlns="http://jmix.io/schema/core/fetch-plans">
     <fetchPlan name="product-with-details" class="org.izumi.jstore.entity.Product" extends="_base">
-        <property name="categories" fetchPlan="_base"/>
         <property name="images" fetchPlan="_base"/>
-    </fetchPlan>
-
-    <fetchPlan name="test" class="org.izumi.jstore.entity.User" extends="_base">
-        <property name="roles" fetchPlan="_base"/>
     </fetchPlan>
 </fetchPlans>

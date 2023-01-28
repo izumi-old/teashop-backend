@@ -6,8 +6,11 @@ import javax.persistence.FetchType;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Positive;
+import java.time.LocalDate;
+import java.util.List;
 
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import lombok.AllArgsConstructor;
@@ -15,19 +18,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "ORDER_" +
-        "", indexes = {
+@Table(name = "ORDER_", indexes = {
         @Index(name = "IDX_ORDER_USER_ID", columnList = "USER_ID")
 })
 @JmixEntity
 @Entity(name = "Order_")
 public class Order extends StandardEntity {
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> items;
 
     @JoinColumn(name = "USER_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -48,6 +51,14 @@ public class Order extends StandardEntity {
     @Positive
     @Column(name = "PRICE", nullable = false)
     private Double price;
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
 
     public Status getStatus() {
         return status == null ? null : Status.fromId(status);

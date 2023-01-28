@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="1" author="JStore">
+    <changeSet id="1" author="JStore" dbms="!postgresql">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="PRODUCT"/>
         </preConditions>
@@ -14,6 +14,111 @@
                   file="org/izumi/jstore/liquibase/changelog/csv/init-products.csv"
                   usePreparedStatements="true"
                   separator=","/>
+    </changeSet>
+
+    <changeSet id="2" author="JStore" dbms="postgresql">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="PRODUCT"/>
+        </preConditions>
+
+        <insert tableName="PRODUCT">
+            <column name="ID" value="e3a4f04d-78d4-41dd-8386-1ba8ded843d9"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чай черный с яблоком 25 шт."/>
+            <column name="PRICE" value="50.0"/>
+            <column name="REMAINDER" value="15"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="a72ce45c-2c84-4e27-99a5-290ebb2a594e"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чай черный с грушей 25 шт."/>
+            <column name="PRICE" value="50.0"/>
+            <column name="REMAINDER" value="2"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="dd240a29-1bb6-4fbd-a391-38a99a035879"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чай черный со сливой 25 шт."/>
+            <column name="PRICE" value="50.0"/>
+            <column name="REMAINDER" value="0"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="9d742227-c6fe-4c39-8a1e-0c0055e27c32"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чай зеленый кленовый лист 25 шт."/>
+            <column name="PRICE" value="60.0"/>
+            <column name="REMAINDER" value="4"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="d48b1d63-b158-4204-9046-5fa731296393"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чай зеленый 25 шт."/>
+            <column name="PRICE" value="50.0"/>
+            <column name="REMAINDER" value="4"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="a242b9ef-1729-4298-8a46-7f54eafdba96"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чай черный 25 шт."/>
+            <column name="PRICE" value="40.0"/>
+            <column name="REMAINDER" value="10"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="b650ae37-3b81-4420-9e2d-8703dbe1d2ca"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Молочный улун 25 шт."/>
+            <column name="PRICE" value="50.0"/>
+            <column name="REMAINDER" value="10"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="c4f15ae9-50fe-407c-923f-f81bd6cc1410"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Шу пуэр №1 50 гр."/>
+            <column name="PRICE" value="120.0"/>
+            <column name="REMAINDER" value="7"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="4c2b1da2-35ce-4948-b49a-bf1dec7fbed3"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Шу пуэр №2 50 гр."/>
+            <column name="PRICE" value="120.0"/>
+            <column name="REMAINDER" value="7"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="c1d06f01-c6b7-4baa-8f26-661f479f712c"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Шу пуэр №3 50 гр."/>
+            <column name="PRICE" value="160.0"/>
+            <column name="REMAINDER" value="7"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="900a9035-d928-448f-a428-60d81bd6e31a"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Электрочайник"/>
+            <column name="PRICE" value="1200.0"/>
+            <column name="REMAINDER" value="30"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="f01d5377-b7fb-48e6-9086-b54e712490d6"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чайник для плиты"/>
+            <column name="PRICE" value="900.0"/>
+            <column name="REMAINDER" value="15"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="87b551f3-3676-4432-800b-79dd13632d68"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чайник заварочный"/>
+            <column name="PRICE" value="500.0"/>
+            <column name="REMAINDER" value="10"/>
+        </insert>
+        <insert tableName="PRODUCT">
+            <column name="ID" value="2545f97a-61cf-49aa-ac3c-b0709e4e59d7"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Чайник для плиты розовый"/>
+            <column name="PRICE" value="950.0"/>
+            <column name="REMAINDER" value="8"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

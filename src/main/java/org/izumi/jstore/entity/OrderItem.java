@@ -11,11 +11,14 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Positive;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
@@ -29,6 +32,9 @@ import lombok.NoArgsConstructor;
 @Entity
 public class OrderItem extends StandardEntity {
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JsonIgnore
     @JoinColumn(name = "ORDER_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Order order;

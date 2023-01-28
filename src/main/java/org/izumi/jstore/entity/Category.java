@@ -18,6 +18,8 @@ import lombok.NoArgsConstructor;
 @JmixEntity
 @Entity
 public class Category extends StandardEntity {
+    public static final String TEA_NAME = "Чай";
+    public static final String EXTRAS_NAME = "Утварь";
 
     @Column(name = "NAME", nullable = false, unique = true)
     private String name;

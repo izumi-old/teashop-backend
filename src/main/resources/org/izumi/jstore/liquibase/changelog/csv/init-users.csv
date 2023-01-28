@@ -1,3 +1,4 @@
-id, version, username, password, active
-60885987-1b61-4247-94c7-dff348347f93,1,admin,{noop}admin,true
-32885987-1b61-4247-94c7-dff348347f93,1,anonym,{noop}anonym,true
+id,version,username,password,active,first_name,last_name,email
+60885987-1b61-4247-94c7-dff348347f93,1,admin,{noop}admin,true,null,null,null
+32885987-1b61-4247-94c7-dff348347f93,1,anonym,{noop}anonym,true,null,null,null
+20b72115-45ee-4a0e-bafa-b93aa19ec8aa,1,emerald,{noop}emerald,true,Ирина,Мокроусова,mokrousova.irina@yandex.ru

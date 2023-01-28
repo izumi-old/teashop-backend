@@ -1,5 +1,6 @@
 package org.izumi.jstore.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +23,7 @@ import java.util.List;
 @Entity
 public class Product extends StandardEntity {
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<ProductInCategory> categories;
 
